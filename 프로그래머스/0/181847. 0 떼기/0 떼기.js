@@ -1,3 +1,3 @@
 function solution(n_str) {
-    return n_str.replace(/(^0+)/, "");
+    return String(Number(n_str));
 }
