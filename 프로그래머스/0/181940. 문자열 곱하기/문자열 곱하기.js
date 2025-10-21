@@ -1,7 +1,9 @@
 function solution(my_string, k) {
-    let answer = '';
+    let answer = "";
     for(let i = 0; i<k; i++){
-    answer += my_string;
+        answer += my_string;
     }
+    
     return answer;
 }
+ 
