@@ -1,12 +1,17 @@
 let fs = require('fs');
-let input = fs.readFileSync('/dev/stdin').toString().split('\n');
+let input = fs.readFileSync('/dev/stdin').toString().split(/\s+/);
 
-let [hour, min] = input[0].split(' ').map(Number);
-let need_time = Number(input[1]);
+let hour = Number(input[0]);
+let min = Number(input[1]);
+let need_time = Number(input[2]);
 
-hour += Math.floor((min + need_time) / 60);
-min = (min + need_time) % 60;
+min += need_time;
 
-if (hour >= 24) hour -= 24;
+if (min >= 60) {
+  hour += Math.floor(min / 60);
+  min = min % 60;
+}
+
+if (hour >= 24) hour = hour % 24;
 
 console.log(hour, min);
