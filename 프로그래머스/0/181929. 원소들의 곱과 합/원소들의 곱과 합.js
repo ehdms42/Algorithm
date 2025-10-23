@@ -1,7 +1,6 @@
 function solution(num_list) {
-    let mul = num_list.reduce((acc, str) => acc * str); // 모든 원소의 곱
-    let plus = num_list.reduce((acc, str) => acc + str) // 모든 원소의 합
-        plus = Math.pow(plus, 2); // 모든 원소의 합의 제곱
+    let sum = num_list.reduce((acc, cur) => acc + cur);
+    let mul = num_list.reduce((acc, cur) => acc * cur);
     
-    return mul < plus ? 1 : 0;
+    return mul < Math.pow(sum,2) ? 1 : 0;
 }
