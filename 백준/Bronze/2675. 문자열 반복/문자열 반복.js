@@ -3,7 +3,7 @@ let input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 let t = Number(input[0]);
 
-for (let i = 1; i <= t; i++) {
+for(let i = 1; i <= t; i++){
   let [r, s] = input[i].split(' ');
   r = Number(r);
 
