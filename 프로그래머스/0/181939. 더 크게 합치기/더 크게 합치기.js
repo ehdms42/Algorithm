@@ -1,7 +1,6 @@
 function solution(a, b) {
-    
-    const ab = parseInt(String(a) + String(b));
-    const ba = parseInt(String(b) + String(a)); 
-    
-    return ab >= ba ? ab : ba; 
+   const ab = Number(a.toString() + b.toString()) 
+   const ba = Number(b.toString() + a.toString())
+   
+   return ab > ba ? ab : ba;
 }
