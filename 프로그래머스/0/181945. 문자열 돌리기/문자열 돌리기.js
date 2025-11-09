@@ -4,13 +4,12 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-let input = '';
+let input = [];
 
 rl.on('line', function (line) {
-    input = line;
-    rl.close();
-}).on('close', function () {
-    for (let i = 0; i < input.length; i++) {
-        console.log(input[i]);
-    }
+    input = [line];
+}).on('close',function(){
+    let str = input[0];
+    
+    str.split('').forEach(v => console.log(v));
 });
