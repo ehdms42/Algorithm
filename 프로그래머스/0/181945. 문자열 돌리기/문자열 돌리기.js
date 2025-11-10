@@ -1,15 +1,4 @@
-const readline = require('readline');
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim();
 
-let input = [];
-
-rl.on('line', function (line) {
-    input = [line];
-}).on('close',function(){
-    let str = input[0];
-    
-    str.split('').forEach(v => console.log(v));
-});
+input.split('').forEach(ch => console.log(ch));
