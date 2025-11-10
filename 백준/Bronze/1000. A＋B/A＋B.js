@@ -1,9 +1,6 @@
 let fs = require('fs');
-let input = fs.readFileSync('/dev/stdin').toString().split('\n');
+let input = fs.readFileSync('/dev/stdin').toString().trim().split(' ');
 
-let line = input[0].split(' ');
-
-let a = parseInt(line[0]);
-let b = parseInt(line[1]);
+let [a, b] = input.map(Number);
 
 console.log(a + b);
