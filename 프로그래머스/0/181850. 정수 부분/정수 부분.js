@@ -1,3 +1,3 @@
 function solution(flo) {
-    return Math.trunc(flo)
+    return Math.floor(flo);
 }
