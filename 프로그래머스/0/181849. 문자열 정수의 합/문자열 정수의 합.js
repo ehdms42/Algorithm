@@ -1,4 +1,3 @@
 function solution(num_str) {
-    return num_str.split('').reduce((acc, str) => acc += Number(str),0);
-    
+    return num_str.split('').map(Number).reduce((acc, cur) => acc += cur);
 }
