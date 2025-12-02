@@ -1,17 +1,14 @@
-1
-2
-3
-4
-5
-6
-7
-8
-9
 function solution(num_list) {
-    const sum = (condition) => num_list.filter((_, index) => condition(index)).reduce((acc, cur) => acc + cur, 0);
+    let oddSum = 0;   
+    let evenSum = 0; 
 
-    const oddSum = sum((index) => index % 2 === 0);
-    const evenSum = sum((index) => index % 2 === 1);
+    for (let i = 0; i < num_list.length; i++) {
+        if ((i + 1) % 2 === 1) {
+            oddSum += num_list[i];
+        } else {
+            evenSum += num_list[i];
+        }
+    }
 
-    return oddSum < evenSum ? evenSum : oddSum;
+    return Math.max(oddSum, evenSum);
 }
