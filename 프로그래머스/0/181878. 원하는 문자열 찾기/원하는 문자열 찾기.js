@@ -1,5 +1,3 @@
 function solution(myString, pat) {
-    const pattern = pat.toLowerCase();
-    
-    return myString.toLowerCase().includes(pattern) ? 1 : 0;
+    return myString.toLowerCase().includes(pat.toLowerCase()) ? 1 : 0;
 }
