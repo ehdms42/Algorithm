@@ -1,3 +1,3 @@
 function solution(my_string) {
-    return my_string.trim().split(' ')
+    return my_string.split(' ');
 }
