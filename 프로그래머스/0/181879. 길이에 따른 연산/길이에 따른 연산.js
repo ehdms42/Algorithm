@@ -1,8 +1,6 @@
 function solution(num_list) {
-    if (num_list.length >= 11) {
-        return num_list.reduce((sum, element) => sum + element);
-    } else {
-        return num_list.reduce((product, element) => product * element);
-    }
+    let numSum = num_list.reduce((acc, cur) => acc + cur);
+    let numMul = num_list.reduce((acc, cur) => acc * cur);
+    
+    return num_list.length >= 11 ? numSum : numMul;
 }
-
