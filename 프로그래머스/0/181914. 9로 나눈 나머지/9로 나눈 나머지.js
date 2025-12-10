@@ -1,3 +1,1 @@
-function solution(number) {
-    return (number.split('').map(Number).reduce((acc, cur) => acc + cur))% 9;
-}
+const solution = n => BigInt(n) % 9n;
