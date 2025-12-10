@@ -1,9 +1,3 @@
 function solution(todo_list, finished) {
-    var answer = [];
-    for(let i = 0; i < todo_list.length; i++){
-    if(!(finished[i])){
-        answer.push(todo_list[i])
-    }
-    }
-    return answer;
+    return todo_list.filter((_, i) => finished[i] === false);
 }
