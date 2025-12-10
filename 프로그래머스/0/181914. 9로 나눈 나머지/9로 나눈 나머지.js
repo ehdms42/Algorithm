@@ -1,4 +1,3 @@
 function solution(number) {
-    return (number.split('').reduce((acc, v) => acc += Number(v), 0)) % 9;
-    
+    return (number.split('').map(Number).reduce((acc, cur) => acc + cur))% 9;
 }
