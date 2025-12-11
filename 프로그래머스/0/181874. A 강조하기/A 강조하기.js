@@ -1,3 +1,3 @@
 function solution(myString) {
-    return myString.toLowerCase().replaceAll('a', 'A')
+    return myString.toLowerCase().replaceAll('a', 'A');
 }
