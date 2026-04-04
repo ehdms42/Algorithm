@@ -1,22 +1,21 @@
 function solution(progresses, speeds) {
-    const days = progresses.map((progress, i) => 
-        Math.ceil((100 - progress) / speeds[i])
-    );
+  let answer = [];
 
-    const answer = [];
-    let currentDay = days[0];
-    let count = 1;
-
-    for (let i = 1; i < days.length; i++) {
-        if (days[i] <= currentDay) {
-            count++;
-        } else {
-            answer.push(count);
-            currentDay = days[i];
-            count = 1;
-        }
+  while (speeds.length > 0) { // speed 배열길이가 0이 될때까지
+    let cnt = 0;
+    for (let i = 0; i < speeds.length; i++) { // progress와 speed 짝지어 더하기
+      if (progresses[i] < 100) { // 100이 넘어가면 그만 더하기
+        progresses[i] += speeds[i];
+      }
     }
-    answer.push(count);
-
-    return answer;
+    while (progresses[0] >= 100) { // 맨앞의 progress배열이 100이 넘으면 shift
+      progresses.shift();
+      speeds.shift(); // speed도 shift
+      cnt++;
+    }
+    if (cnt > 0) {
+      answer.push(cnt);
+    }
+  }
+  return answer;
 }
